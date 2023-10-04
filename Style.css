@@ -1,0 +1,132 @@
+img{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+@font-face { font-family: VarelaRegular; src: url('VarelaRound-Regular.ttf'); } 
+      h1 {
+         font-family: VarelaRegular;
+      }
+
+#text{
+    color:#5948BA;
+    text-align: center;
+    font-size: 200%;
+    font-family: VarelaRegular;
+    border: 4px solid #5948BA;
+    background-color:#DECBFF;
+    background-image: linear-gradient(#e8dbff,#DECBFF);
+    margin: 2%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+#text2{
+    color:#5948BA;
+    text-align: center;
+    font-size: 200%;
+    font-family: VarelaRegular;
+    border: 4px solid #5948BA;
+    background-color:#DECBFF;
+    background-image: linear-gradient(#e8dbff,#DECBFF);
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.images img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 4px solid #5343b8;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    transition: all 0.5s;
+}
+
+.images img:hover {
+    border: 4px solid #2b235e;
+}
+
+#icons{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 2%; 
+    transition: all 0.5s;
+}
+
+#icons:hover {
+    width: 150px;
+    height: 150px;
+}
+
+#arrow{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    transition: all 0.5s;
+}
+
+#arrow:hover {
+    width: 150px;
+    height: 150px;
+}
+
+div.desc {
+    padding: 15%;
+    text-align: center;
+  }
+
+  #textdesc{
+    color:#5948BA;
+    text-align: center;
+    font-size: 150%;
+    font-family: VarelaRegular;
+    background-color:#DECBFF;
+    background-image: linear-gradient(#e8dbff,#DECBFF);
+    display: table;
+    border: 4px solid #5343b8;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+#background{
+  background-image: url('Imagens/Icones/Notebook.png');
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.options {
+	font-size: 20px;
+	display: grid;
+	grid-gap: 20px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	top: 40%;
+	left: 40%;
+}
+
+button {
+    color:#5948BA;
+    text-align: center;
+    font-size: 100%;
+    font-family: VarelaRegular;
+    border: 4px solid #5948BA;
+    background-color:#DECBFF;
+    background-image: linear-gradient(#e8dbff,#DECBFF);
+    margin: 2%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+#pontos {
+	font-size: 100%;
+	color:#5948BA;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz - Galeria de Desenhos</title>
+
+        <link rel="icon" type="image/x-icon" href="Imagens/Icones/Logo.png">
+
+        <link rel="stylesheet" href="Style.css">
+
+        <script type="text/javascript" src="Script.js"></script>
+
+        <meta charset="UTF-8">
+        
+        <h1 id="text" style="font-size: 400%;">
+        Quiz
+        </h1>
+        
+    </head>
+    
+    <body id="background">
+
+        <a href="index.html">
+        <img id="arrow"src="Imagens/Icones/Arrow.png" alt="Seta-Voltar">   
+        </a>
+
+        <section>
+            <p id="text">
+         Teste seu conhecimento sobre as curiosidades presentes nas outras páginas!
+        </p>
+
+        <center>
+
+            <div id="jogo" class="jogo">
+                <div id="text2" class="panel">
+                  <div class="question" id="ques"></div>
+                  <div class="options" id="opt"></div>
+                  <button onclick="Checar()" id="btn">RESPONDER</button>
+                  <div id="pontos"></div>
+                </div>
+              </div>
+              
+            <script src="script.js"></script>
+            
+            <script>
+            
+            const questoes = [
+              {
+                q: "O que a teoria das cores estuda?",
+                a: [
+                  { text: "O segredo da vida eterna", isCorrect: false },
+                  { text: "Como fazer um bolo", isCorrect: false },
+                  { text: "A luz e a natureza das cores", isCorrect: true },
+                  { text: "Cálculos sobre a gravidade terrestre", isCorrect: false },
+                ],
+              },
+              {
+                q: "Quantas pessoas na família de Van Gogh, também tinham esse mesmo nome?",
+                a: [
+                  { text: "Uma", isCorrect: false, isSelected: false },
+                  { text: "Três", isCorrect: false },
+                  { text: "Cinco", isCorrect: false },
+                  { text: "Quatro", isCorrect: true },
+                ],
+              },
+              {
+                q: "Desde quando fanarts existem?",
+                a: [
+                  { text: "Anos noventa", isCorrect: false },
+                  { text: "Anos oitenta", isCorrect: false },
+                  { text: "Anos sessenta", isCorrect: true },
+                  { text: "Anos dois mil", isCorrect: false },
+                ],
+              },
+            ];
+
+            let questaoAtual = 0;
+            let pontos = 0;
+
+            function CarregarQuestoes() {
+              const question = document.getElementById("ques");
+              const opt = document.getElementById("opt");
+
+              question.textContent = questoes[questaoAtual].q;
+              opt.innerHTML = "";
+
+              for (let i = 0; i < questoes[questaoAtual].a.length; i++) {
+                const choicesdiv = document.createElement("div");
+                const choice = document.createElement("input");
+                const choiceLabel = document.createElement("label");
+
+                choice.type = "radio";
+                choice.name = "answer";
+                choice.value = i;
+
+                choiceLabel.textContent = questoes[questaoAtual].a[i].text;
+
+                choicesdiv.appendChild(choice);
+                choicesdiv.appendChild(choiceLabel);
+                opt.appendChild(choicesdiv);
+              }
+            }
+
+            CarregarQuestoes();
+
+            function CarregarPontos() {
+              const totalPontos = document.getElementById("pontos");
+              totalPontos.textContent = `Você acertou ${pontos} de ${questoes.length} questões!`;
+            }
+
+            function ProximaQuestao() {
+              if (questaoAtual < questoes.length - 1) {
+                questaoAtual++;
+                CarregarQuestoes();
+              } else {
+                document.getElementById("opt").remove();
+                document.getElementById("ques").remove();
+                document.getElementById("btn").remove();
+                CarregarPontos();
+              }
+            }
+
+            function Checar() {
+              const selectedAns = parseInt(document.querySelector('input[name="answer"]:checked').value);
+
+              if (questoes[questaoAtual].a[selectedAns].isCorrect) {
+                pontos++;
+              }
+
+              ProximaQuestao();
+            }
+            
+            </script>
+
+        </center>
+
+    </body>
+
+    <footer> 
+        <p id="text"> Email de contato: cassimiguelalmeida@gmail.com  </p>
+    </footer>
+    
+</html>
